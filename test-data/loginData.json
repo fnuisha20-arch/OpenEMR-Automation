@@ -1,0 +1,27 @@
+{
+  "admin": {
+    "username": "admin",
+    "password": "pass",
+    "expectedDashboard": "Administration"
+  },
+  "physician": {
+    "username": "physician",
+    "password": "physician",
+    "expectedDashboard": "Calendar"
+  },
+  "receptionist": {
+    "username": "receptionist",
+    "password": "receptionist",
+    "expectedDashboard": "Appointments"
+  },
+  "clinician": {
+    "username": "clinician",
+    "password": "clinician",
+    "expectedDashboard": "Patient"
+  },
+  "accountant": {
+    "username": "accountant",
+    "password": "accountant",
+    "expectedDashboard": "Billing"
+  }
+}
