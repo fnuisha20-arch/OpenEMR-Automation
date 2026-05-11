@@ -3,10 +3,13 @@ import Groq from 'groq-sdk'
 import * as fs from 'fs'
 import * as path from 'path'
 
-// Initialize Groq client
-const groq = new Groq({
-apiKey : process.env.GROQ_API_KEY
-});
+// Lazy-initialize Groq client — only when actually running evals
+function getGroqClient(): Groq {
+    if (!process.env.GROQ_API_KEY) {
+        throw new Error('GROQ_API_KEY is required to run AI evals. Add it to your .env file.');
+    }
+    return new Groq({ apiKey: process.env.GROQ_API_KEY });
+}
 
 //Define Types
 export interface Evalcase{
@@ -29,7 +32,8 @@ export interface EvalResult{
 //Run single eval case
 export async function runEval(testcase:Evalcase): Promise<EvalResult> {
     //call Groq API
-    const response= await groq.chat.completions.create({
+    const groq = getGroqClient();
+const response = await groq.chat.completions.create({
         model : 'llama-3.3-70b-versatile',
         messages : [
             {
