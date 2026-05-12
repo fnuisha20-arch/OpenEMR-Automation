@@ -1,6 +1,6 @@
 # OpenEMR Automation — Playwright + AI Safety Evals
 
-![Playwright Tests](https://github.com/fnuisha20-arch/OpenEMR-Automation/actions/workflows/playwright.yml/badge.svg)
+![Playwright Tests](https://github.com/Isha-QA-HealthT/OpenEMR-Automation/actions/workflows/playwright.yml/badge.svg)
 
 End-to-end automation framework combining **Playwright UI testing** with 
 **AI safety evaluation**, built against [OpenEMR](https://demo.openemr.io/openemr) — 
